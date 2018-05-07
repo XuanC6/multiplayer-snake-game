@@ -384,7 +384,7 @@ class MultiSnakeEnv(gym.Env):
         
         self.action_space = spaces.MultiDiscrete([3] * self.game.n_snakes)
         self.observation_space = spaces.Box(low = 0, high = 255, 
-                                            shape = (self.width, self.height))
+                                            shape = (self.width+2, self.height+2, 1))
         self.viewer = None
         self.game_over = True
 
