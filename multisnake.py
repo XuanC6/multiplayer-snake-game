@@ -34,7 +34,7 @@ class SnakeGame:
         self.width = width
         self.height = height
 
-        self.n_snakes = 4
+        self.n_snakes = 3
         init_snake_length = 4
 
         while True:
