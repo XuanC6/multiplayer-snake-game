@@ -357,7 +357,7 @@ class SnakeGame:
                 obs[0, x+1, y+1] = opfruit_cell
     
             obs = obs.transpose([1, 2, 0])
-            obs = obs/128 - 1
+            #obs = obs/128 - 1
             
             h_x, h_y = self.head(num)
             h2_x, h2_y = self.snakes[num][1]
