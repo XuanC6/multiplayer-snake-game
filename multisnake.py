@@ -34,7 +34,7 @@ class SnakeGame:
         self.width = width
         self.height = height
 
-        self.n_snakes = 4
+        self.n_snakes = 3
         init_snake_length = 4
 
         while True:
@@ -371,7 +371,7 @@ class SnakeGame:
             else:
                 all_obs.append(np.rot90(obs))
 
-        return all_obs
+        return np.array(all_obs)
 
 
 class MultiSnakeEnv(gym.Env):
@@ -384,7 +384,7 @@ class MultiSnakeEnv(gym.Env):
         
         self.action_space = spaces.MultiDiscrete([3] * self.game.n_snakes)
         self.observation_space = spaces.Box(low = 0, high = 255, 
-                                            shape = (self.width+2, self.height+2, 1))
+                                            shape = (self.game.n_snakes, self.width+2, self.height+2, 1))
         self.viewer = None
         self.game_over = True
 
